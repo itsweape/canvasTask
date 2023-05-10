@@ -5,6 +5,7 @@ import androidx.core.content.res.ResourcesCompat;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -96,9 +97,17 @@ public class MainActivity extends AppCompatActivity {
             mCanvas.drawCircle(halfWidth, halfHeight, halfHeight/10, mPaint);
         }else if (onClick == 8) {
             mPaint.setColor(mColorEyes);
+            mCanvas.drawCircle(halfWidth, halfHeight-325, halfHeight/18, mPaint);
+            mPaint.setColor(mColorBody);
+            mCanvas.drawCircle(halfWidth, halfHeight-310, halfHeight/17, mPaint);
+        } else if (onClick == 9) {
+            mPaint.setColor(mColorEyes);
             mCanvas.drawCircle(halfWidth+45, halfHeight-280, halfHeight/22, mPaint);
             mCanvas.drawCircle(halfWidth-45, halfHeight-280, halfHeight/22, mPaint);
-        } else{
+            mPaint.setColor(Color.WHITE);
+            mCanvas.drawCircle(halfWidth+30, halfHeight-280, halfHeight/75, mPaint);
+            mCanvas.drawCircle(halfWidth-30, halfHeight-280, halfHeight/75, mPaint);
+        }else{
             String text = getString(R.string.text1);
             mPaintText.getTextBounds(text, 0, text.length(), mBounds);
             int x = halfWidth - mBounds.centerX();
